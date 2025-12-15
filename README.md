@@ -42,6 +42,17 @@
 | 降压模块 | LM2596S（DC-DC）                 |
 | 电源   | 7.4V 锂电池 + 5V 充电宝（OpenMV 独立供电） |
 
+## 硬件连接说明
+
+系统硬件连接关系如下图所示：
+
+![Hardware Wiring Diagram](docs/wiring_diagram.png)
+
+- OpenMV 通过串口与 Arduino 通信  
+- 霍尔编码器分别接入 Arduino 中断引脚用于测速  
+- Arduino 通过 L298N 驱动模块控制左右电机转速  
+- OpenMV 采用独立 5V 供电，避免电机负载导致电压不稳
+
 **设计说明：**
 
 * OpenMV 具备较大视野，适合赛道黑线检测
